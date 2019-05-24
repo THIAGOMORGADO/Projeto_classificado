@@ -18,10 +18,9 @@
            </div>
             <ul class="nav navbar-nav navbar-right">
                 <?php if (isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])): ?>
-<!--                    <li --><?php //echo $_SESSION['NOmeDeUsuario']; ?><!--></li>-->
 
-                    <li><a href="Meu-anuncios.php"><?php echo $_SESSION['NOmeDeUsuario']?></a></li>
-                    <li><a href="Meu-anuncios.php">Meu Anuncios</a></li>
+                    <li><a href="./"><?php echo $_SESSION['NomeDeUsuario'];?></a></li>
+                    <li><a href="Meu-anuncios.php">Anuncios</a></li>
                     <li><a href="sair.php">Sair</a></li>
                 <?php else: ?>
                     <li><a href="cadastrese.php">Cadastre-se</a></li>
