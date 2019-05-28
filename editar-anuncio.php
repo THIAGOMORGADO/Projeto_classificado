@@ -77,10 +77,12 @@ else{
             <label for="add_foto">Fotos_produtos:</label>
             <input type="file" name="fotos[]" multiple/><br>
             <div class="panel panel-default">
-                <div class="panel panel-heading">Fotos do Anuncio</div>       
-                <div class="panel panel-body">
-
-                </div>    
+                <div class="panel panel-default\">
+                    <div class="panel panel-heading">Fotos do Anuncio</div>
+                    <div class="panel panel-body">
+                    
+                    </div>
+                </div>   
             </div>
         </div>
         <input type="submit" value="Salvar" class="btn btn-default"/>
