@@ -13,6 +13,9 @@ if (isset($_POST['titulo']) && !empty($_POST['titulo'])) {
     $valor =  addslashes($_POST['valor']);
     $descricao =  addslashes($_POST['descricao']);
     $estado =  addslashes($_POST['estado']);
+   
+    
+
     if(isset($_FILES['fotos'])){
         $fotos = $_FILES['fotos'];
     }
@@ -38,7 +41,7 @@ else{
 ?>
 <div class="container">
     <h1>Editar meus-anuncio</h1>
-    <form method="POST" ecrtype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="Catetoria">Categorias:</label>
             <select name="categoria" id="categoria" class="form-control">
@@ -88,5 +91,4 @@ else{
         <input type="submit" value="Salvar" class="btn btn-default"/>
     </form>
 </div>
-
 <?php require 'page/footer.php'; ?>
