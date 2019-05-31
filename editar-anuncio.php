@@ -38,7 +38,7 @@ else{
 ?>
 <div class="container">
     <h1>Editar meus-anuncio</h1>
-    <form method="POST" ecrtype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="Catetoria">Categorias:</label>
             <select name="categoria" id="categoria" class="form-control">
