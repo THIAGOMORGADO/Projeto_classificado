@@ -26,11 +26,11 @@ if(empty($_SESSION['cLogin'])){
         ?>
             <tr>
                 <td>
-                    <?php if (!empty($anuncio['url'])): ?>
-                         <img src="imagen/<?php echo $anuncio['url']; ?>" borde="" height="50">
-                    <?php else:?>
-                    <img src="imagen/<?php echo $anuncio['url']; ?>" borde="" height="50"/>     
-                   <?php endif; ?>
+                <?php if(!empty($anuncio['url'])): ?>
+				<img src="imagen/anuncio/<?php echo $anuncio['url']; ?>" height="50" border="0" />
+				<?php else: ?>
+                <img src="imagen/anuncio" height="50" border="0" />
+				<?php endif; ?>
                 </td>
                 <td><?php echo $anuncio['titulo']; ?></td>
                 <td>R$ <?php echo number_format($anuncio['valor'], 2); ?></td>
