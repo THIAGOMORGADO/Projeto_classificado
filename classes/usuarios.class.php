@@ -21,7 +21,6 @@ class Usuarios {
             return false;
         }
     }
-
     public function login ($email, $senha){
         global $pdo;
 
@@ -38,6 +37,13 @@ class Usuarios {
         } else {
             return false;
         }
+    }
+    public function getTotalUsuarios(){
+        global $pdo;
+        $sql = $pdo->query("SELECT COUNT(*) as c FROM usuarios");
+        $row = $sql->fetch();
+
+        return $row['c'];
     }
 }
 ?>
