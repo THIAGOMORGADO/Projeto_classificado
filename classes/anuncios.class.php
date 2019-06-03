@@ -46,6 +46,16 @@ class Anuncio {
         $sql->execute();
         if ($sql->rowCount() > 0) {
             $array = $sql->fetch();
+            $array ['fotos'] = array();
+
+
+            $sql = $pdo->prepare("SELECT id,url FROM anuncios_imagens WHERE id_anuncio = :id_anuncio");
+			$sql->bindValue(":id_anuncio", $id);
+			$sql->execute();
+            if($sql->rowCount() > 0) {
+                $array['fotos'] =  $sql->fetchAll();
+                
+            }
         }
         return $array;
     }
@@ -72,8 +82,8 @@ class Anuncio {
 					list($width_orig, $height_orig) = getimagesize('imagen/anuncio/'.$tmpname);
 					$ratio = $width_orig/$height_orig;
 
-					$width = 500;
-					$height = 500;
+					$width = 100;
+					$height = 100;
 
 					if($width/$height > $ratio) {
 						$width = $height*$ratio;
@@ -100,6 +110,25 @@ class Anuncio {
                 }
             }
         }
+    }
+    public function excluirFoto($id){
+        global $pdo;
+        $id_anuncio = 0;
+
+        $sql = $pdo->prepare("SELECT id_anuncio FROM anuncios_imagens WHERE id = :id");
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0 ){
+            $row = $sql->fetch();
+            $id_anuncio = $row['id_anuncio'];
+        }
+
+        $sql = $pdo->prepare("DELETE FROM anuncios_imagens WHERE id = :id");
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        return $id_anuncio;
     }
 }
 

@@ -80,7 +80,12 @@ else{
                 <div class="panel panel-default\">
                     <div class="panel panel-heading">Fotos do Anuncio</div>
                     <div class="panel panel-body">
-                    
+                        <?php foreach($info['fotos'] as $foto   ): ?>
+                            <div class="foto_item">
+                               <img src="imagen/anuncio/<?php echo $foto['url'];  ?>" class="img-thumbnail" border="0"><br>
+                               <a href="excluir-foto.php?id=<?php echo $foto['id'];?>" class="btn btn-default">Excluir imagen</a>
+                            </div> 
+                        <?php endforeach; ?>
                     </div>
                 </div>   
             </div>
